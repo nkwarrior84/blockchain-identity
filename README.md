@@ -1,21 +1,19 @@
-![Origin Protocol](data/origin-header.png)
+# Digital-Identity using ERC 725/735
 
-Head to https://www.originprotocol.com/developers to learn more about what we're building and how to get involved.
+An implementation of [ERC 725](https://github.com/ethereum/EIPs/issues/725) and [ERC 735](https://github.com/ethereum/EIPs/issues/735), proposed standard for managing **Digital Identity** on the **Blockchain**. We uses the [Truffle framework](http://truffleframework.com/) and [Ganache CLI](https://github.com/trufflesuite/ganache-cli) for testing.
 
-# Origin Identity Playground
+Using [ERC 725](https://github.com/ethereum/EIPs/issues/725), a **Smart Contract** can protect function calls from being executed unless the **Sender** has a verified **Claim** from a trusted **Issuer**; e.g. build a mechanism into our Smart Contracts to only allow interactions from reputable people. ERC-725 allows for many more use-cases, such as multi-sig execution approvals and verification by contract call instead of key validation.
 
-This app is a working implementation of the [ERC 725](https://github.com/ethereum/EIPs/issues/725) and [ERC 735](https://github.com/ethereum/EIPs/issues/735) proposals for managing a unique identity on the blockchain.
-
-Using ERC 725, a smart contract can protect function calls from being executed unless the sender has a verified claim
-from a trusted issuer.
-
-## Live Demo
-
-You can try a deployed version of this app at http://erc725.originprotocol.com/#/
-
-It has several Certifiers pre-populated that are not present when running the demo locally. 
-
-The [screenshot walkthrough](#walkthrough) below shows an example of verifying a claims of a person's identity.
+## Issuer Services
+- [x] Live Demo: [https://identity.vboss.tech](https://identity.vboss.tech)
+- [x] Certifiers provides Issuer-Services: 
+  - [x] Has Phone
+  - [x] Has Email
+  - [x] [Has Facebook](https://developers.facebook.com/)
+  - [x] [Has Linked-in](https://developer.linkedin.com/)
+  - [x] [Has Google](https://console.cloud.google.com/apis/credentials)
+  - [x] [Has Github](https://github.com/settings/developers)
+  - [x] [Has Twitter](https://apps.twitter.com/) 
 
 ## Explanation
 
@@ -119,19 +117,32 @@ Again, you should see the address of this contract, and the walled ID of the own
 Alice is ready to start shopping!
 
 
-## Installation
+## Local Development
 
-    npm install
-    npm start
+### Install NVM & Yarn
+```              
+  nvm install v9.11.1                                                                                &&
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg     | sudo apt-key add -                         &&
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list &&
+  sudo apt-get update && sudo apt-get install yarn
+```
 
-## Tests
+### Installation 
+```
+  # 
+  git clone https://github.com/vboss-tech/blockchain-identity &&
+  cd blockchain-identity                                      &&
+  nvm use v9.11.1 && yarn install
+```
 
-    npm run test
+### Run
+```
+  nvm use v9.11.1 &&
+  yarn clean      &&
+  yarn start
+```
 
-## Related
-
-* https://github.com/mirceapasoi/erc725-735
-
-## Credits
-
-* [JosefJ](https://github.com/JosefJ) for the original contract [implementation](https://github.com/JosefJ/IdentityContract)
+### Tests
+```
+  yarn test 
+```
