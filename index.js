@@ -8,7 +8,6 @@ import Web3 from 'web3'
 
 import simpleIssuer from './issuer-services/_simple'
 
-const HOST = process.env.HOST || 'localhost'
 const app = express()
 
 app.get('/', (req, res) => {
@@ -36,7 +35,8 @@ const startGanache = () =>
       default_balance_ether: 100,
       db_path: 'data/db',
       network_id: 999,
-      seed: 123
+      seed: 123,
+      mnemonic: "rival alley punch barrel baby other taxi cannon pause achieve caution race"
       // blocktime: 3
     })
     server.listen(8545, err => {
@@ -50,8 +50,10 @@ const startGanache = () =>
 
 async function start() {
   await startGanache()
-  const webpackDevServer = spawn('./node_modules/.bin/webpack-dev-server', [
-    '--info=false',
+  // const webpackDevServer = spawn('./node_modules/.bin/webpack-dev-server', ['--info=false',
+  const cmd = path.join(__dirname, "node_modules", ".bin", "webpack-dev-server")
+  const webpackDevServer = spawn(cmd, [
+    '--info=true',
     '--port=8082',
     '--host=0.0.0.0'
   ])
@@ -59,12 +61,19 @@ async function start() {
   webpackDevServer.stderr.pipe(process.stderr)
   process.on('exit', () => webpackDevServer.kill())
 
-  const PORT = process.env.PORT || 3000
+  const PORT = process.env.PORT || 3344
   app.listen(PORT, () => {
-    console.log(`\nListening on port ${PORT}\n`)
+    console.log(`\nListening on host ${HOST}, port ${PORT}\n`)
     setTimeout(() => {
-      opener(`http://${HOST}:${PORT}`)
-    }, 2000)
+      try{
+        const url = `http://${HOST}:${PORT}`
+        console.log(`Opening Browser at ${url}`)
+        const browser = opener(url)
+        browser.unref();
+      }catch(err){
+        console.log("open browser", err.message);
+      }
+    }, 4500)
   })
 }
 

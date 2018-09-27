@@ -14,7 +14,7 @@ class IPFS extends Component {
           <button
             className="btn btn-outline-secondary active"
             onClick={() =>
-              this.props.setIpfs(`http://${HOST}:9090`, `http://${HOST}:5002`)
+              this.props.setIpfs(`http://${HOST}:8080`, `http://${HOST}:5002`)
             }
           >
             Localhost
@@ -22,10 +22,10 @@ class IPFS extends Component {
           <button
             className="btn btn-outline-secondary"
             onClick={() =>
-              this.props.setIpfs('https://gateway.originprotocol.com', 'https://gateway.originprotocol.com')
+              this.props.setIpfs('https://ipfs-gateway.vboss.tech', 'https://ipfs-gateway.vboss.tech')
             }
           >
-            gateway.originprotocol.com
+            ipfs-gateway.vboss.tech
           </button>
           <button className="btn btn-outline-secondary">ipfs.infura.io</button>
           <button className="btn btn-outline-secondary">gateway.ipfs.io</button>

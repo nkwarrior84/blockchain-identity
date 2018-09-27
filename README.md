@@ -15,22 +15,25 @@ Using [ERC 725](https://github.com/ethereum/EIPs/issues/725), a **Smart Contract
   - [x] [Has Github](https://github.com/settings/developers)
   - [x] [Has Twitter](https://apps.twitter.com/) 
 
+- Meta-Mask Secret Backup Phrase: `rival alley punch barrel baby other taxi cannon pause achieve caution race`
+
+
 ## Explanation
 
-Imagine we want to deploy a Listing contract to sell a concert ticket, but only allow interactions from
+Imagine we want to deploy a Listing contract to sell a Airplane ticket, but only allow interactions from
 users with a verified email address. How can we accomplish this with ERC 725?
 
 First, lets define the entities that will be interacting:
 
 * The _Consumer_ is an identity who wants to buy the ticket.
-* The _Issuer_ is an identity which issues claims of type 'EMAIL_VERIFIED'.
-* The _Listing_ will only allow _Consumers_ with an _EMAIL_VERIFIED_ claim from an _Issuer_ they trust.
+* The _Issuer_ is an identity which issues claims of type 'EMAIL_VERIFIED' & 'PHONE_VERIFIED'.
+* The _Listing_ will only allow _Consumers_ with an _EMAIL_VERIFIED_ & _PHONE_VERIFIED_ claim from an _Issuer_ they trust.
 
 This leaves us with a few questions...
 
-1.  How does the trusted Issuer verify an email address?
-2.  How does the Consumer get an EMAIL_VERIFIED claim onto their Identity?
-3.  How can the Listing verify that the Consumer has an EMAIL_VERIFIED claim from a trusted Issuer?
+1. How does the trusted Issuer verify an email address?
+2. How does the Consumer get an EMAIL_VERIFIED & _PHONE_VERIFIED_ claim onto their Identity?
+3. How can the Listing verify that the Consumer has an EMAIL_VERIFIED & _PHONE_VERIFIED_ claim from a trusted Issuer?
 
 To answer these questions, lets go through the process of setting up all the required contracts and services, starting
 with the Issuer.

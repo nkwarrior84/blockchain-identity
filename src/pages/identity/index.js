@@ -22,7 +22,7 @@ function identityLogo(identity) {
   if (identity.official) {
     return (
       <img
-        src="images/origin-logo-dark.png"
+        src="images/logo.png"
         style={{ height: 14, opacity: 0.6, verticalAlign: -1 }}
       />
     )

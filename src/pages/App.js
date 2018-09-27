@@ -43,15 +43,20 @@ class App extends Component {
       !nextProps.wallet.activeAddress
     ) {
       window.sessionStorage.privateKeys = JSON.stringify([
-        '0x1aae4f8918c2c1fa3f911415491a49e541a528233da3a54df21e7eea5c675cd9',
-        '0x7a8be97032a5c719d2cea4e4adaed0620e9fa9e49e2ccf689daf9180e3638f93',
-        '0x85a676919234e90007b20bf3ae6b54b455b62b42bf298ac03669d164e4689c49'
+        // '0x1aae4f8918c2c1fa3f911415491a49e541a528233da3a54df21e7eea5c675cd9',
+        // '0x7a8be97032a5c719d2cea4e4adaed0620e9fa9e49e2ccf689daf9180e3638f93',
+        // '0x85a676919234e90007b20bf3ae6b54b455b62b42bf298ac03669d164e4689c49'
+        //TODO
+        // "0x24f3c3b01a0783948380fb683a9712f079e7d249c0461e1f40054b10b1bb0b23", // accounts[0] ClaimSignerKey
+        "0xd6079ba5123c57b9a8cb3e1fbde9f879c7a18eeca23fa2a965e8181d3ff59f0c",    // accounts[1] Identity
+        "0x20ea25d6c8d99bea5e81918d805b4268d950559b36c5e1cfcbb1cda0197faa08",    // accounts[2] Certifier
+        "0x25acb0da38f5364588f78b4e1f33c4a3981354c9b044d64bf201aad8f38f50ae",    // accounts[3] ClaimChecker
       ])
       this.props.loadWallet()
       this.setState({ preloaded: true })
       this.hideNotice = setTimeout(
         () => this.setState({ preloaded: false }),
-        3000
+        3344
       )
     }
   }
@@ -67,17 +72,9 @@ class App extends Component {
               className="navbar-brand mr-3"
               onClick={() => this.setState({ toggled: false })}
             >
-              ERC 725
+              <a href="https://identity.vboss.tech">Digital Identity ERC-725</a>
             </Link>
-            <span className="navbar-text">
-              Demo implementation by
-              <a href="https://www.originprotocol.com">
-                <img
-                  style={{ height: 15, opacity: 0.5, verticalAlign: -2, marginLeft: 5 }}
-                  src="/images/origin-logo-dark.png"
-                />
-              </a>
-            </span>
+            
             <button
               className="navbar-toggler"
               type="button"
@@ -136,18 +133,18 @@ class App extends Component {
           </Switch>
           <div className="footer">
             <div className="powered-by">
-              <a href="https://www.originprotocol.com">
-                <img src="images/origin-logo-dark.png" />
+              <a href="https://vboss.tech">
+                <img src="images/logo.png" />
               </a>
             </div>
             <div className="middle">
               &copy;{' 2018 '}
-              <a className="ml-1" href="https://www.originprotocol.com">
-                Origin Protocol
+              <a className="ml-1" href="https://vboss.tech">
+                vBOSS-BnB Bot & Blockchain
               </a>
             </div>
             <div className="right">
-              <a href="https://github.com/OriginProtocol/identity-playground">
+              <a href="https://github.com/vbosstech/digital-identity">
                 <i className="fa fa-lg fa-github" />
               </a>
               <Versions />

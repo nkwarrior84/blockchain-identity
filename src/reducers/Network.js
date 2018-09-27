@@ -3,15 +3,15 @@ import { NetworkConstants } from 'actions/Network'
 import Providers from 'constants/Providers'
 
 const HOST = process.env.HOST || 'localhost'
-let ipfsGateway = 'https://gateway.originprotocol.com',
-  ipfsRPC = 'https://gateway.originprotocol.com',
-  provider = 'https://rinkeby.infura.io',
-  browserProvider = false
+let ipfsGateway = 'https://ipfs-gateway.vboss.tech',
+    ipfsRPC     = 'https://ipfs.vboss.tech',
+    provider    = 'https://rinkeby.infura.io',
+    browserProvider = false
 
 if (process.env.NODE_ENV !== 'production') {
-  ipfsGateway = `http://${HOST}:9090`
-  ipfsRPC = `http://${HOST}:5002`
-  provider = `http://${HOST}:8545`
+  ipfsGateway   = `http://${HOST}:8080`
+  ipfsRPC       = `http://${HOST}:5002`
+  provider      = `http://${HOST}:8545`
 }
 
 if (typeof window !== 'undefined') {

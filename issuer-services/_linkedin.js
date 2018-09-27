@@ -6,7 +6,7 @@ var superagent = require('superagent')
 
 const ClaimType = 9 // Has LinkedIn
 
-module.exports = function facebook(app, { web3, linkedInApp, baseUrl }) {
+module.exports = function linkedin(app, { web3, linkedInApp, baseUrl }) {
   const redirect_uri = `${baseUrl}/linkedin-auth-response`
 
   var linkedInOAuth = new OAuth(

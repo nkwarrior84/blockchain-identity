@@ -38,7 +38,7 @@ var config = {
     fs: 'empty'
   },
   devServer: {
-    port: 8081,
+    port: 8080,
     headers: {
       'Access-Control-Allow-Origin': '*'
     }

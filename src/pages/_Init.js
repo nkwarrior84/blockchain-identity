@@ -29,53 +29,53 @@ class Event extends Component {
     ) {
       window.localStorage.clear()
       this.props.reset()
-      this.next('Add some balance to account 1...')
+      this.next('✔ 1. Add some balance to account 1...')
       setTimeout(() => {
         this.props.sendFromNode(nodeAccounts[0].hash, walletAccounts[0], '2')
       }, 500)
     } else if (this.stage === 1 && balances[walletAccounts[1]].eth === '0') {
-      this.next('Add some balance to account 2...')
+      this.next('✔ 2. Add some balance to account 2...')
       setTimeout(() => {
         this.props.sendFromNode(nodeAccounts[0].hash, walletAccounts[1], '2')
       }, 500)
     } else if (this.stage === 2 && balances[walletAccounts[2]].eth === '0') {
-      this.next('Add some balance to account 3...')
+      this.next('✔ 3. Add some balance to account 3...')
       setTimeout(() => {
         this.props.sendFromNode(nodeAccounts[0].hash, walletAccounts[2], '2')
       }, 500)
     } else if (this.stage === 3 && balances[walletAccounts[2]].eth === '0') {
-      this.next('Add Origin certifier...')
+      this.next('✔ 4. Add Origin certifier...')
       setTimeout(() => {
         this.props.selectAccount(walletAccounts[1])
         this.props.deployIdentityContract(
           'Origin',
           'certifier',
-          'https://erc725.originprotocol.com/fb-auth',
+          'https://identity.vboss.tech/fb-auth',
           false,
           'facebook',
           [
             {
-              uri: 'https://erc725.originprotocol.com/fb-auth',
+              uri: 'https://identity.vboss.tech/fb-auth',
               icon: 'facebook',
               claimType: '3'
             },
             {
-              uri: 'https://erc725.originprotocol.com/twitter-auth',
+              uri: 'https://identity.vboss.tech/twitter-auth',
               icon: 'twitter',
               claimType: '4'
             },
             {
-              uri: 'https://erc725.originprotocol.com/github-auth',
+              uri: 'https://identity.vboss.tech/github-auth',
               icon: 'github',
               claimType: '5'
             },
             {
-              uri: 'https://erc725.originprotocol.com/google-auth',
+              uri: 'https://identity.vboss.tech/google-auth',
               icon: 'google',
               claimType: '6'
             },
             {
-              uri: 'https://erc725.originprotocol.com/linkedin-auth',
+              uri: 'https://identity.vboss.tech/linkedin-auth',
               icon: 'linkedin',
               claimType: '9'
             }
@@ -87,7 +87,7 @@ class Event extends Component {
       this.props.createIdentityResponse !== 'success' &&
       nextProps.createIdentityResponse === 'success'
     ) {
-      this.next('Add Claim Signer key...')
+      this.next('✔ 5. Add Claim Signer key...')
       setTimeout(() => {
         var fb = this.props.identity.identities.find(i => i.name === 'Origin')
         this.props.addKey({

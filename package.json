@@ -1,13 +1,12 @@
 {
-  "author": "Nick Poulden",
-  "name": "identity-playground",
-  "version": "0.1.0",
+  "name": "blockchain-identity",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Working implementation and demonstration of ERC 725",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OriginProtocol/identity-playground.git"
+    "url": "git+https://github.com/vbosstech/blockchain-identity.git"
   },
   "scripts": {
     "test": "mocha -r @babel/register test -t 10000",

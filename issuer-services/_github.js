@@ -6,7 +6,7 @@ var superagent = require('superagent')
 
 const ClaimType = 5 // Has GitHub
 
-module.exports = function facebook(app, { web3, githubApp, baseUrl }) {
+module.exports = function github(app, { web3, githubApp, baseUrl }) {
   const redirect_uri = `${baseUrl}/github-auth-response`
 
   var githubOAuth = new OAuth(

@@ -6,7 +6,7 @@ var superagent = require('superagent')
 
 const ClaimType = 6 // Has Google
 
-module.exports = function facebook(app, { web3, googleApp, baseUrl }) {
+module.exports = function google(app, { web3, googleApp, baseUrl }) {
   const redirect_uri = `${baseUrl}/google-auth-response`
 
   var googleOAuth = new OAuth(

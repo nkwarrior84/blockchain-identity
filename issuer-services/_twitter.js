@@ -5,7 +5,7 @@ var HTML = require('./html')
 
 const ClaimType = 4 // Has Twitter
 
-module.exports = function facebook(app, { web3, twitterApp, baseUrl }) {
+module.exports = function twitter(app, { web3, twitterApp, baseUrl }) {
   var twitterOAuth = new OAuth(
     'https://api.twitter.com/oauth/request_token',
     'https://api.twitter.com/oauth/access_token',

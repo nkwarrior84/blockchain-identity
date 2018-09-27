@@ -2,9 +2,9 @@ import React from 'react'
 
 import Dropdown from 'components/Dropdown'
 
-const latestVersion = '0.1.0'
+const latestVersion = '0.2.0'
 const oldVersions = [
-  // { version: '0.1.0', hash: '' }
+  // { version: '0.2.0', hash: '' }
 ]
 
 const Versions = () => (
