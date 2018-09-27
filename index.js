@@ -8,11 +8,12 @@ import Web3 from 'web3'
 
 import simpleIssuer from './issuer-services/_simple'
 
+const HOST = process.env.HOST || 'localhost'
 const app = express()
 
 app.get('/', (req, res) => {
   var html = fs.readFileSync(__dirname + '/public/dev.html').toString()
-  res.send(html.replace(/\{HOST\}/g, `http://${HOST}:8082/`))
+  res.send(html.replace(/\{HOST\}/g, `http://${HOST}:8080/`))
 })
 app.use(serveStatic('public'))
 
@@ -50,11 +51,9 @@ const startGanache = () =>
 
 async function start() {
   await startGanache()
-  // const webpackDevServer = spawn('./node_modules/.bin/webpack-dev-server', ['--info=false',
-  const cmd = path.join(__dirname, "node_modules", ".bin", "webpack-dev-server")
-  const webpackDevServer = spawn(cmd, [
+  const webpackDevServer = spawn('./node_modules/.bin/webpack-dev-server', [
     '--info=true',
-    '--port=8082',
+    '--port=8080',
     '--host=0.0.0.0'
   ])
   webpackDevServer.stdout.pipe(process.stdout)
