@@ -44,13 +44,13 @@ class Event extends Component {
         this.props.sendFromNode(nodeAccounts[0].hash, walletAccounts[2], '2')
       }, 500)
     } else if (this.stage === 3 && balances[walletAccounts[2]].eth === '0') {
-      this.next('✔ 4. Add Origin certifier...')
+      this.next('✔ 4. Add IdentityIssuer certifier...')
       setTimeout(() => {
         this.props.selectAccount(walletAccounts[1])
         this.props.deployIdentityContract(
-          'Identity Issuer',
+          'IdentityIssuer',
           'certifier',
-          'https://identity.vboss.tech/fb-auth',
+          // 'https://identity.vboss.tech/fb-auth',
           'https://erc725.originprotocol.com/fb-auth',
           false,
           'facebook',
@@ -95,7 +95,7 @@ class Event extends Component {
     ) {
       this.next('✔ 5. Add Claim Signer key...')
       setTimeout(() => {
-        var fb = this.props.identity.identities.find(i => i.name === 'Origin')
+        var fb = this.props.identity.identities.find(i => i.name === 'IdentityIssuer')
         this.props.addKey({
           purpose: '3',
           keyType: '1',
