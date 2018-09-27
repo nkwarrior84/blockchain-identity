@@ -48,34 +48,40 @@ class Event extends Component {
       setTimeout(() => {
         this.props.selectAccount(walletAccounts[1])
         this.props.deployIdentityContract(
-          'Origin',
+          'Identity Issuer',
           'certifier',
           'https://identity.vboss.tech/fb-auth',
+          'https://erc725.originprotocol.com/fb-auth',
           false,
           'facebook',
           [
             {
-              uri: 'https://identity.vboss.tech/fb-auth',
+              // uri: 'https://identity.vboss.tech/fb-auth',
+              uri: 'https://erc725.originprotocol.com/fb-auth',
               icon: 'facebook',
               claimType: '3'
             },
             {
-              uri: 'https://identity.vboss.tech/twitter-auth',
+              // uri: 'https://identity.vboss.tech/twitter-auth',
+              uri: 'https://erc725.originprotocol.com/twitter-auth',
               icon: 'twitter',
               claimType: '4'
             },
             {
-              uri: 'https://identity.vboss.tech/github-auth',
+              // uri: 'https://identity.vboss.tech/github-auth',
+              uri: 'https://erc725.originprotocol.com/github-auth',
               icon: 'github',
               claimType: '5'
             },
             {
-              uri: 'https://identity.vboss.tech/google-auth',
+              // uri: 'https://identity.vboss.tech/google-auth',
+              uri: 'https://erc725.originprotocol.com/google-auth',
               icon: 'google',
               claimType: '6'
             },
             {
-              uri: 'https://identity.vboss.tech/linkedin-auth',
+              // uri: 'https://identity.vboss.tech/linkedin-auth',
+              uri: 'https://erc725.originprotocol.com/linkedin-auth',
               icon: 'linkedin',
               claimType: '9'
             }
